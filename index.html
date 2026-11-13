@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaan, tomar jonno 🌹</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#f0d49a;--pink:#f2a3b3;--text:#fbeef0}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body{background:radial-gradient(ellipse at 50% 20%,#4a1530 0%,#1d0b1c 55%,#0b0510 100%) fixed;color:var(--text);font-family:"Cormorant Garamond",Georgia,"Noto Serif Bengali",serif;overflow-x:hidden}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.moon{position:fixed;top:calc(16px + env(safe-area-inset-top));right:18px;width:52px;z-index:1;filter:drop-shadow(0 0 12px rgba(246,227,176,.65))}
+main{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:calc(34px + env(safe-area-inset-top)) 22px calc(40px + env(safe-area-inset-bottom))}
+.script{font-family:"Pinyon Script","Snell Roundhand",cursive;color:var(--gold);text-shadow:0 0 28px rgba(240,212,154,.45);line-height:1.15}
+#salam{font-size:clamp(2.5rem,11vw,4.4rem);min-height:1.2em}
+.jum{font-size:1.35rem;letter-spacing:.05em;color:var(--pink);margin-top:4px}
+.rv{opacity:0;transform:translateY(14px);filter:blur(6px);transition:opacity 1.4s,transform 1.4s,filter 1.4s}
+.rv.on{opacity:1;transform:none;filter:none}
+.bouquet{width:min(340px,86vw);margin:6px 0 8px;opacity:0;transform:translateY(70px) scale(.8);transition:opacity 1.6s,transform 1.8s cubic-bezier(.2,.8,.2,1)}
+.opened .bouquet{opacity:1;transform:none}
+.bouquet svg{width:100%;height:auto;overflow:visible}
+.layer{transform-origin:100px 100px;transform:scale(.05) rotate(-40deg);opacity:0;transition:transform 2s cubic-bezier(.2,.9,.25,1.04) var(--d),opacity .9s var(--d)}
+.opened .layer{transform:none;opacity:1}
+.glow{animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.55}}
+.pre{opacity:0;transition:opacity 1s .2s}.opened .pre{opacity:1}
+.sway{animation:sway 5s ease-in-out infinite;transform-origin:180px 322px}
+@keyframes sway{50%{transform:rotate(1.8deg)}}
+.line{font-size:clamp(1.3rem,5vw,1.6rem);line-height:1.6;font-style:italic;max-width:26rem;margin-top:6px}
+.love{font-size:clamp(3rem,14vw,5.2rem);margin-top:26px}
+.heart{display:inline-block;animation:beat 1.3s ease-in-out infinite;filter:drop-shadow(0 0 12px #ff3d6a)}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.18)}}
+.valo{font-size:1.6rem;margin-top:8px;color:var(--text)}
+.dua{font-size:1.15rem;margin-top:22px;color:var(--pink);opacity:.9}
+#hug{margin-top:26px;font:inherit;font-size:1.25rem;font-weight:600;color:#fff;background:linear-gradient(135deg,#d91e4a,#8d0f2b);border:0;border-radius:999px;padding:14px 34px;cursor:pointer;box-shadow:0 8px 30px rgba(217,30,74,.45);transition:transform .2s}
+#hug:active{transform:scale(.95)}
+#hug:focus-visible,.env:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+/* intro */
+#intro{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:20px;text-align:center;transition:opacity 1.1s,transform 1.3s}
+#intro.out{opacity:0;transform:translateY(40px) scale(.92);pointer-events:none}
+#intro h2{font-size:clamp(2.2rem,9vw,3.4rem)}
+.tap{font-size:1.15rem;letter-spacing:.08em;color:var(--pink);animation:blink 2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+.env{position:relative;width:min(300px,78vw);aspect-ratio:3/2;perspective:900px;cursor:pointer;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 18px 40px rgba(220,30,70,.45))}
+@keyframes float{50%{transform:translateY(-12px)}}
+.eb{position:absolute;inset:0;border-radius:8px;background:linear-gradient(160deg,#f6dfd6,#dfb7ab)}
+.ep{position:absolute;inset:0;border-radius:8px;background:linear-gradient(160deg,#fbeae2,#e2bbae);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);z-index:2}
+.flap{position:absolute;left:0;top:0;width:100%;height:56%;background:linear-gradient(#f2d3c8,#deb0a2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:3;transition:transform .8s ease,z-index 0s .35s}
+.seal{position:absolute;left:50%;top:56%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff6585,#9d0f2e);color:#ffd5de;display:grid;place-items:center;font-size:22px;z-index:4;box-shadow:0 4px 14px rgba(0,0,0,.4);transition:opacity .3s,transform .6s}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .seal{opacity:0;transform:scale(1.8)}
+.p{position:fixed;top:-30px;z-index:3;pointer-events:none;animation:drop linear forwards}
+@keyframes drop{to{transform:translate(var(--dx),115vh) rotate(var(--r))}}
+@media (prefers-reduced-motion:reduce){.sway,.glow,.env,.heart,.tap{animation:none}.p{display:none}.layer{transition:opacity 1s}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<svg class="moon" viewBox="0 0 48 48" aria-hidden="true"><defs><mask id="mm"><rect width="48" height="48" fill="#fff"/><circle cx="31" cy="19" r="15" fill="#000"/></mask></defs><circle cx="22" cy="26" r="17" fill="#f6e3b0" mask="url(#mm)"/><circle cx="39" cy="9" r="1.8" fill="#f6e3b0"/></svg>
+
+<div id="intro">
+  <h2 class="script">Jaan, tomar jonno ekta surprise ache</h2>
+  <div class="env" id="env" role="button" tabindex="0" aria-label="Surprise ta kholo">
+    <div class="eb"></div><div class="ep"></div><div class="flap"></div><div class="seal">♥</div>
+  </div>
+  <div class="tap">Tap kore kholo 🤍</div>
+</div>
+
+<main>
+  <h1 class="script" id="salam"></h1>
+  <div class="jum rv" data-t="3000">Jummah Mubarak 🕌</div>
+
+  <div class="bouquet" id="bouquet">
+    <svg viewBox="0 0 360 340" role="img" aria-label="Ekta golap ar ekta lily ful">
+      <defs>
+        <radialGradient id="glow"><stop offset="0" stop-color="#ff7a9a" stop-opacity=".4"/><stop offset="1" stop-color="#ff7a9a" stop-opacity="0"/></radialGradient>
+        <radialGradient id="throat"><stop offset="0" stop-color="#c4da5e"/><stop offset=".6" stop-color="#d9e88a" stop-opacity=".7"/><stop offset="1" stop-color="#d9e88a" stop-opacity="0"/></radialGradient>
+        <linearGradient id="leafG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f5a2c"/><stop offset="1" stop-color="#4aa35d"/></linearGradient>
+        <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dca4"/><stop offset="1" stop-color="#c79a4a"/></linearGradient>
+        <linearGradient id="gA" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-88"><stop offset="0" stop-color="#5a0620"/><stop offset=".55" stop-color="#a8113a"/><stop offset="1" stop-color="#d93a5f"/></linearGradient>
+        <linearGradient id="gB" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-88"><stop offset="0" stop-color="#6d0824"/><stop offset=".55" stop-color="#bd1740"/><stop offset="1" stop-color="#ea5276"/></linearGradient>
+        <linearGradient id="gC" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-88"><stop offset="0" stop-color="#7e0b29"/><stop offset=".55" stop-color="#cf1f48"/><stop offset="1" stop-color="#f06f8d"/></linearGradient>
+        <linearGradient id="gD" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-88"><stop offset="0" stop-color="#8f0d2d"/><stop offset=".55" stop-color="#df2b54"/><stop offset="1" stop-color="#f7889f"/></linearGradient>
+        <g id="petal"><path d="M0 0 C-30 -6 -52 -34 -42 -62 C-34 -84 -10 -91 0 -85 C10 -91 34 -84 42 -62 C52 -34 30 -6 0 0Z" stroke="#3d0210" stroke-opacity=".4" stroke-width="1.2"/><path d="M-36 -66 C-26 -82 -8 -87 0 -82 C8 -87 26 -82 36 -66" fill="none" stroke="#ffd0da" stroke-opacity=".45" stroke-width="2.2" stroke-linecap="round"/></g>
+        <linearGradient id="lA" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-98"><stop offset="0" stop-color="#d3e37e"/><stop offset=".2" stop-color="#fbf5ea"/><stop offset=".7" stop-color="#fff"/><stop offset="1" stop-color="#f5c6d3"/></linearGradient>
+        <linearGradient id="lB" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-98"><stop offset="0" stop-color="#cbdd72"/><stop offset=".2" stop-color="#fff5ee"/><stop offset=".65" stop-color="#fde8ee"/><stop offset="1" stop-color="#efa9bd"/></linearGradient>
+        <g id="petalO"><path d="M0 0 C-10 -14 -22 -44 -15 -68 C-12 -80 -5 -90 0 -98 C5 -90 12 -80 15 -68 C22 -44 10 -14 0 0Z" stroke="#c9a2b0" stroke-opacity=".55" stroke-width=".8"/><path d="M0 0 C10 -14 22 -44 15 -68 C12 -80 5 -90 0 -98Z" fill="#a56a82" fill-opacity=".14"/><path d="M0 -6 C1 -40 0 -70 0 -92" fill="none" stroke="#bf93a5" stroke-opacity=".6" stroke-width="1.2"/></g>
+        <g id="petalI"><path d="M0 0 C-16 -12 -36 -40 -28 -66 C-24 -76 -30 -80 -22 -86 C-14 -92 -6 -92 0 -98 C6 -92 14 -92 22 -86 C30 -80 24 -76 28 -66 C36 -40 16 -12 0 0Z" stroke="#c9a2b0" stroke-opacity=".55" stroke-width=".8"/><path d="M0 0 C16 -12 36 -40 28 -66 C24 -76 30 -80 22 -86 C14 -92 6 -92 0 -98Z" fill="#a56a82" fill-opacity=".14"/><path d="M0 -6 C1 -40 0 -70 0 -92" fill="none" stroke="#bf93a5" stroke-opacity=".6" stroke-width="1.2"/><g fill="#c93b6e" fill-opacity=".75"><circle cx="-7" cy="-24" r="1.7"/><circle cx="6" cy="-30" r="1.6"/><circle cx="-4" cy="-38" r="1.5"/><circle cx="9" cy="-21" r="1.4"/><circle cx="-10" cy="-33" r="1.4"/><circle cx="3" cy="-46" r="1.3"/></g></g>
+      </defs>
+      <circle class="glow" cx="180" cy="120" r="175" fill="url(#glow)"/>
+      <g class="sway">
+        <g class="pre">
+          <path d="M92 125 C90 190 150 250 178 322" stroke="#3c7d45" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M270 135 C272 200 215 255 182 322" stroke="#2a6836" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M124 221 C100 215 70 220 48 238 C74 244 106 238 124 226Z" fill="url(#leafG)"/>
+          <path d="M104 183 C84 170 62 166 44 170 C56 188 80 194 104 188Z" fill="url(#leafG)"/>
+          <path d="M239 228 C262 212 290 212 308 224 C292 244 262 246 239 232Z" fill="url(#leafG)"/>
+          <path d="M259 191 C280 176 304 176 322 186 C308 204 282 208 259 195Z" fill="url(#leafG)"/>
+          <path d="M181 290 C158 268 144 290 166 298Z M181 290 C204 268 218 290 196 298Z M176 296 L162 326 L172 320 L178 330Z M186 296 L200 326 L190 320 L184 330Z" fill="url(#gold)"/>
+          <rect x="172" y="284" width="18" height="16" rx="5" fill="#c79a4a"/>
+        </g>
+        <g transform="translate(6 22) scale(.86)"><g id="lily"></g></g>
+        <g transform="translate(184 32) scale(.86)"><g id="rose"></g></g>
+      </g>
+    </svg>
+  </div>
+
+  <p class="line rv" data-t="4300">Tumi onek dure, Tai</p>
+  <p class="line rv" data-t="5800">Ei Jummah te offline e tomar hate ekta ful dite parlam na, tai online e dilam.</p>
+  <p class="line rv" data-t="7800">Dure achi, kintu mon ta ekdom tomar kache. 🤍</p>
+  <div class="script love rv" data-t="10000" data-s="1">I love you, jaan <span class="heart">❤</span></div>
+  <div class="valo rv" data-t="11200">Valobasha niyo.</div>
+  <div class="dua rv" data-t="12400">Allah amader ke ekshathe rakhuk, Aameen 🤲</div>
+  <div class="rv" data-t="13400"><button id="hug">Ekta hug dibo jaan? 🤗</button></div>
+  <p class="line" id="hugmsg" style="display:none">Hug peyecho to? Onek miss korchi tomake. 🤍</p>
+</main>
+
+<script>
+// ---------- flowers ----------
+(function(){
+  function d(b,x){return(b+x).toFixed(2)+'s'}
+  function rose(b){
+    var L=[{n:7,sc:.98,off:0,g:'gA',d:.55},{n:6,sc:.8,off:26,g:'gB',d:.35},{n:5,sc:.6,off:12,g:'gC',d:.15},{n:4,sc:.4,off:44,g:'gD',d:0}],h='';
+    L.forEach(function(l){h+='<g class="layer" style="--d:'+d(b,l.d)+'">';
+      for(var i=0;i<l.n;i++){var r=l.off+i*360/l.n,k=l.sc*(1+.05*Math.sin(i*2.3+l.n));
+        h+='<use href="#petal" fill="url(#'+l.g+')" transform="translate(100 100) rotate('+r.toFixed(1)+') scale('+k.toFixed(3)+')"/>'}
+      h+='</g>'});
+    return h+'<g class="layer" style="--d:'+d(b,0)+'"><circle cx="100" cy="100" r="9" fill="#6b0a22"/><path d="M100 100 c4 -3 8 1 6 5 c-2 6 -11 6 -13 -1 c-2 -9 7 -15 15 -11 c10 5 8 19 -3 22" fill="none" stroke="#2e0210" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/><path d="M96 93 c3 -3 8 -3 11 0" fill="none" stroke="#ff9fb4" stroke-opacity=".6" stroke-width="1.5" stroke-linecap="round"/></g>';
+  }
+  function lily(b){
+    var h='';
+    function ring(id,g,n,off,sc,dl){h+='<g class="layer" style="--d:'+d(b,dl)+'">';
+      for(var i=0;i<n;i++){var k=sc*(1+.03*Math.sin(i*2.1+off));
+        h+='<use href="#'+id+'" fill="url(#'+g+')" transform="translate(100 100) rotate('+(off+i*360/n)+') scale('+k.toFixed(3)+')"/>'}
+      h+='</g>'}
+    ring('petalO','lA',3,0,.92,.5);ring('petalI','lB',3,60,.86,.25);
+    h+='<g class="layer" style="--d:'+d(b,.15)+'"><circle cx="100" cy="100" r="22" fill="url(#throat)"/></g><g class="layer" style="--d:'+d(b,0)+'">';
+    h+='<g transform="translate(100 100) rotate(-28)"><path d="M0 0 Q-3 -26 -5 -54" stroke="#e6f0b4" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-5" cy="-55" r="3.6" fill="#b3c45f"/></g>';
+    for(var i=0;i<6;i++)h+='<g transform="translate(100 100) rotate('+(15+i*60)+')"><path d="M0 0 Q5 -22 2 -42" stroke="#eef3c8" stroke-width="1.5" fill="none" stroke-linecap="round"/><ellipse cx="2" cy="-45" rx="3" ry="8" transform="rotate(8 2 -45)" fill="#a8421b" stroke="#5a1d08" stroke-width=".8"/><ellipse cx="1" cy="-47" rx="1" ry="4" transform="rotate(8 2 -45)" fill="#e08a4d" opacity=".7"/></g>';
+    return h+'</g>';
+  }
+  document.getElementById('lily').innerHTML=lily(0);
+  document.getElementById('rose').innerHTML=rose(.6);
+})();
+
+// ---------- sky: stars, fireflies, sparkles ----------
+var burst;
+(function(){
+  var c=document.getElementById('sky'),x=c.getContext('2d'),W,H,dpr=Math.min(window.devicePixelRatio||1,2);
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}
+  addEventListener('resize',size);size();
+  var R=Math.random,stars=[],flies=[],sp=[],i;
+  for(i=0;i<110;i++)stars.push({x:R(),y:R(),r:R()*1.3+.2,p:R()*6.3,s:.5+R()*1.5});
+  for(i=0;i<24;i++)flies.push({x:R()*W,y:R()*H,r:2+R()*4,vy:.12+R()*.3,p:R()*6.3});
+  burst=function(px,py,n){if(reduce)return;for(var k=0;k<n;k++){var a=R()*6.283,v=1+R()*3.5;
+    sp.push({x:px,y:py,vx:Math.cos(a)*v,vy:Math.sin(a)*v-1,l:1,c:R()<.5?'255,215,140':'255,150,180',r:1+R()*2.2})}};
+  function frame(t){
+    x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';
+    stars.forEach(function(s){x.globalAlpha=.25+.75*(.5+.5*Math.sin(t/1000*s.s+s.p));x.fillStyle='#fff';x.beginPath();x.arc(s.x*W,s.y*H,s.r,0,6.283);x.fill()});
+    flies.forEach(function(f){f.y-=f.vy;f.x+=Math.sin(t/1500+f.p)*.35;if(f.y<-20){f.y=H+20;f.x=R()*W}
+      var a=.35+.35*Math.sin(t/700+f.p),g=x.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r*4);
+      g.addColorStop(0,'rgba(255,220,150,'+a+')');g.addColorStop(1,'rgba(255,220,150,0)');x.globalAlpha=1;x.fillStyle=g;x.beginPath();x.arc(f.x,f.y,f.r*4,0,6.283);x.fill()});
+    sp=sp.filter(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.04;p.vx*=.985;p.l-=.014;if(p.l<=0)return false;
+      x.globalAlpha=p.l;x.fillStyle='rgb('+p.c+')';x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill();return true});
+    requestAnimationFrame(frame)}
+  requestAnimationFrame(frame);
+  addEventListener('pointerdown',function(e){burst(e.clientX,e.clientY,12)});
+})();
+
+// ---------- story ----------
+(function(){
+  var started=false,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function at(ms,fn){setTimeout(fn,ms)}
+  function chime(){try{var a=new(window.AudioContext||window.webkitAudioContext)();
+    [523.25,659.25,783.99,1046.5,1318.5].forEach(function(f,i){var o=a.createOscillator(),g=a.createGain(),t=a.currentTime+i*.18;
+      o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+1.6);
+      o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+1.7)})}catch(e){}}
+  function petals(n){if(reduce)return;var set=['🌹','🤍','🌸','❤️','✨'];
+    for(var k=0;k<n;k++){var s=document.createElement('span');s.className='p';s.textContent=set[Math.floor(Math.random()*set.length)];
+      s.style.left=Math.random()*100+'vw';s.style.fontSize=(12+Math.random()*16)+'px';
+      s.style.animationDuration=(6+Math.random()*6)+'s';s.style.animationDelay=(Math.random()*3)+'s';
+      s.style.setProperty('--dx',(Math.random()*120-60)+'px');s.style.setProperty('--r',(Math.random()*540-270)+'deg');
+      document.body.appendChild(s);(function(e){setTimeout(function(){e.remove()},14000)})(s)}}
+  function type(){var el=document.getElementById('salam'),t='Assalamualaikum, Jaan',i=0;
+    (function n(){el.textContent=t.slice(0,i++);if(i<=t.length)setTimeout(n,reduce?0:85)})()}
+  function start(){
+    if(started)return;started=true;
+    var env=document.getElementById('env'),intro=document.getElementById('intro');
+    env.classList.add('open');chime();burst(innerWidth/2,innerHeight/2,40);
+    at(1000,function(){intro.classList.add('out');document.body.classList.add('opened');petals(30)});
+    at(1500,type);
+    at(2600,function(){var r=document.getElementById('bouquet').getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height*.35,60)});
+    document.querySelectorAll('.rv').forEach(function(el){at(+el.dataset.t,function(){el.classList.add('on');
+      if(el.dataset.s){el.scrollIntoView({behavior:'smooth',block:'center'});var r=el.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,50);petals(16)}})});
+    at(2300,function(){intro.style.display='none'});
+  }
+  var env=document.getElementById('env');
+  env.addEventListener('click',start);
+  env.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();start()}});
+  document.getElementById('hug').addEventListener('click',function(e){
+    var b=e.currentTarget,r=b.getBoundingClientRect();b.style.display='none';
+    var m=document.getElementById('hugmsg');m.style.display='block';
+    burst(r.left+r.width/2,r.top,80);petals(45);m.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>
